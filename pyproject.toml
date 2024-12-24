@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "fsort"
 version = "1.0.0"
-description = "sorts files and folders"
+description = "sorts files in a directory"
 authors = ["Sandeep Suryaprasad <sandeep.suryaprasad@gmail.com>"]
 readme = "README.md"
 packages = [{include = "fsort"}]
