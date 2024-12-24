@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fsort"
+version = "1.0.0"
+description = "sorts files and folders"
+authors = ["Sandeep Suryaprasad <sandeep.suryaprasad@gmail.com>"]
+readme = "README.md"
+packages = [{include = "fsort"}]
+
+[tool.poetry.scripts]
+fsort = "fsort.__main__:run"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "8.1.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
