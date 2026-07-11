@@ -41,7 +41,8 @@ class File:
         for item in _path.glob(f"*.{extension}"):
             if item.is_file():
                 name, last_modified, size = self._stats(item)
-                files.append(FileInfo(name, last_modified, size))
+                file_info = FileInfo(name, last_modified, size)
+                files.append(file_info)
         return files
 
     def _print_results(self, items: list[FileInfo]) -> None:
