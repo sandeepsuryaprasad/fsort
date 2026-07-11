@@ -1,45 +1,67 @@
-from argparse import ArgumentParser
+from dataclasses import dataclass
 from time import sleep
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
 
+@dataclass
 class FileInfo:
-    def __init__(self, name, last_modified, size):
-        self.name = name
-        self.last_modified = last_modified
-        self.size = size
-
-    def __repr__(self):
-        return f"({self.name}, {self.last_modified}, {self.size})"
+    name: str
+    last_modified: datetime
+    size: float
 
 
-def display_results(items):
-    for item in items:
-        sleep(0.1)
-        print(item)
+class File:
+    def _to_mega_bytes(self, bytes: float) -> float:
+        return round(bytes / 1024 ** 2, 2)
 
+    def _stats(self, path: Path) -> tuple:
+        stats = path.stat()
+        file_name = path.name
+        last_modified = datetime.fromtimestamp(stats.st_mtime)
+        file_size = self._to_mega_bytes(stats.st_size)
+        return (file_name, last_modified, file_size)
 
-def get_file_stats(pathobject):
-    stats = pathobject.stat()
-    return (pathobject.name, datetime.fromtimestamp(stats.st_mtime), stats.st_size)
+    def _is_valid_dir(self, path: Path) -> bool:
+        """validates if the given path is valid dir or not"""
+        if not path.exists():
+            return False
+        if not path.is_dir():
+            return False
+        return True
 
+    def _files_to_sort(self, path: str, extension: str) -> Optional[list[FileInfo]]:
+        """Returns list of FileInfo objects"""
+        _path = Path(path)
+        if not self._is_valid_dir(_path):
+            print(f"{_path} is not a valid directory")
+            return None
+        files = []
+        for item in _path.glob(f"*.{extension}"):
+            if item.is_file():
+                name, last_modified, size = self._stats(item)
+                files.append(FileInfo(name, last_modified, size))
+        return files
 
-def sort(dir_path, by):
-    files = [ ]
-    path = Path(dir_path)
-    if by.upper() not in ("NAME", "LAST_MODIFIED", "SIZE"):
-        raise Exception("Invalid sort order")
-    if not path.exists():
-        raise Exception("Invalid path")
-    for item in path.glob("*"):
-        if item.is_file():
-            name, last_modified, size = get_file_stats(item)
-            files.append(FileInfo(name, last_modified, size))
+    def _print_results(self, items: list[FileInfo]) -> None:
+        """Prints the results in the console"""
+        for item in items:
+            sleep(0.05)
+            # Converting all fields to str
+            _last_modified: str = item.last_modified.strftime('%Y-%m-%d %H:%M:%S')
+            _size: str = f"{item.size:.2f} MB"
+            _file_name: str = item.name
+            print(f"{_last_modified:<20} {_size:>14}\t{_file_name}")
 
-    if by.upper() == "NAME":
-        display_results(sorted(files, key=lambda item: item.name))
-    elif by.upper() == "LAST_MODIFIED":
-        display_results(sorted(files, key=lambda item: item.last_modified))
-    else:
-        display_results(sorted(files, key=lambda item: item.size))
+    def sort(self, path:str, by_what:str, pattern:str) -> None:
+        """Sorts the list of files"""
+        files_to_sort = self._files_to_sort(path, pattern)
+        if not files_to_sort:
+            return
+        if by_what == "name":
+            self._print_results(sorted(files_to_sort, key=lambda item: item.name))
+        elif by_what == "date":
+            self._print_results(sorted(files_to_sort, key=lambda item: item.last_modified))
+        else:
+            self._print_results(sorted(files_to_sort, key=lambda item: item.size))

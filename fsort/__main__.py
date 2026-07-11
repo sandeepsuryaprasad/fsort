@@ -1,13 +1,44 @@
-from fsort.file_sort import sort
+from fsort.file_sort import File
 from argparse import ArgumentParser
-import click
+from importlib.metadata import version
 
-@click.command()
-@click.option("--path", default=".", help="Directory path where the files need to be sorted")
-@click.option("--key", default="name", help="Sort files by name/size/last_modified")
-@click.version_option(package_name="fsort")
-def run(path, key):
-    sort(path, key)
+
+def console_entry():
+    sorting_choices = ("name", "size", "date")
+    _parser = ArgumentParser()
+    _parser.add_argument(
+        "--path",
+        dest="path",
+        default=".",
+        help="Directory path of the files to be sorted"
+    )
+    _parser.add_argument(
+        "--key",
+        dest="key",
+        default="name",
+        choices=sorting_choices,
+        help="Sort files by name/size/last_modified"
+    )
+    _parser.add_argument(
+        "--file-extension",
+        dest="extension",
+        default="*",
+        help="File extension pattern e.g txt, pdf, jpg"
+    )
+    _parser.add_argument(
+        "--version",
+        action="version",
+        version=f"fsort {version('fsort')}"
+    )
+
+    parser = _parser.parse_args()
+    return parser
+
+
+def run():
+    parser = console_entry()
+    file = File()
+    file.sort(path=parser.path, by_what=parser.key, pattern=parser.extension)
 
 
 if __name__ == "__main__":
