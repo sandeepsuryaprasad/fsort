@@ -10,7 +10,7 @@ $ pip install fsort-cli
 
 ```console
 $ fsort --version
-fsort 0.5.0
+fsort 0.6.0
 ```
 
 ### Usage
@@ -36,6 +36,7 @@ fsort --path /path/to/directory --key date
 fsort --path /path/to/directory --key name
 ```
 NOTE: Windows users please enclose the directory path in quotes. For Mac/Linux users wrapping the directory path in quotes is not mandatory.
+
 Windows:
 ```console
 fsort --path "C:\path\to\directory" --key size
