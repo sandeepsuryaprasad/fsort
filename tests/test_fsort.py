@@ -1,5 +1,6 @@
 import subprocess
 from datetime import datetime, timedelta
+from src.fsort.file_sort import FileSort
 
 td = datetime.now()
 t_delta_micro_seconds = timedelta(microseconds=20)
@@ -23,7 +24,8 @@ test_files = [
 ]
 
 def test_file_sort_by_name():
-    pass
+    file_sort = FileSort()
+    file_sort.sort()
 
 def test_file_sort_by_date():
     subprocess.run("fsort --date=")

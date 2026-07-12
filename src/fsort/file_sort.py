@@ -12,7 +12,7 @@ class FileInfo:
     size: float
 
 
-class File:
+class FileSort:
     def _to_mega_bytes(self, bytes: float) -> float:
         return round(bytes / 1024 ** 2, 2)
 

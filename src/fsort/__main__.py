@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 from importlib.metadata import version
 
-from fsort.file_sort import File
+from file_sort import FileSort
 
 
 def console_entry():
@@ -40,7 +40,7 @@ def console_entry():
 def run():
     """Executes sort"""
     parser = console_entry()
-    file = File()
+    file = FileSort()
     file.sort(path=parser.path, by_what=parser.key, pattern=parser.extension)
 
 
