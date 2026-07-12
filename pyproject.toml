@@ -1,5 +1,5 @@
 [project]
-name = "fsort"
+name = "fsort-cli"
 version = "0.1.0"
 description = "Console app that displays files in sorted order"
 readme = "README.md"
