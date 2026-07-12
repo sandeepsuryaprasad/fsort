@@ -10,7 +10,7 @@ pip install fsort-cli
 
 ## Usage
 
-By default `fsort` sorts the files in the current working directory by file name
+By default `fsort` sorts the files in the current working directory by file "name"
 ```console
 fsort
 ```
@@ -29,9 +29,20 @@ fsort --path /path/to/directory --key date
 fsort --path /path/to/directory --key name
 ```
 
-You can sort by specific file extension using `--file-extension` cli argument
+You can sort specific types of files using `--file-extension` cli argument.
+
+Sort all jpg files by "name"
 ```console
 fsort --path /path/to/directory --key name --file-extension jpg
+```
 
-fsort --path /path/to/directory --key name --file-extension txt
+Sort all txt files by "size"
+
+```console
+fsort --path /path/to/directory --key size --file-extension txt
+```
+
+Sort all png files by "last modified date"
+```console
+fsort --path /path/to/directory --key date --file-extension png
 ```
