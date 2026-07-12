@@ -30,14 +30,12 @@ fsort --path /path/to/directory --key name
 ```
 
 You can sort specific types of files using `--file-extension` cli argument.
-
 Sort all jpg files by "name"
 ```console
 fsort --path /path/to/directory --key name --file-extension jpg
 ```
 
 Sort all txt files by "size"
-
 ```console
 fsort --path /path/to/directory --key size --file-extension txt
 ```
