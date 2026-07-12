@@ -20,6 +20,11 @@ You can specify the directory using `--path` cli argument
 fsort --path /path/to/directory
 ```
 
+NOTE: Windows users please enclose the directory path in quotes. For Mac/Linux users wrapping the directory path in quotes is not mandatory.
+```console
+fsort --path "C:\path\to\directory"
+```
+
 You can specify by what order the files need to be sorted using `--key` cli argument
 ```console
 fsort --path /path/to/directory --key size
