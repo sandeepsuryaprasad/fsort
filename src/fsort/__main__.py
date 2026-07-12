@@ -30,7 +30,7 @@ def console_entry():
     _parser.add_argument(
         "--version",
         action="version",
-        version=f"fsort {version('fsort')}"
+        version=f"fsort-cli {version('fsort-cli')}"
     )
 
     parser = _parser.parse_args()
