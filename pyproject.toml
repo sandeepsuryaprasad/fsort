@@ -1,6 +1,6 @@
 [project]
 name = "fsort"
-version = "0.1.0"
+version = "0.0.2"
 description = "Console app that displays files in sorted order"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -9,9 +9,8 @@ authors = [
     {name= "Sandeep Suryaprasad"}
 ]
 
-# since not using src/fsort structure
 [tool.uv.build-backend]
-module-root = ""
+module-root = "src"
 module-name = "fsort"
 
 classifiers = [

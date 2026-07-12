@@ -17,7 +17,7 @@ def console_entry():
         dest="key",
         default="name",
         choices=sorting_choices,
-        help="Sort files by name/size/last_modified"
+        help="Sort files by name/size/date"
     )
     _parser.add_argument(
         "--file-extension",
