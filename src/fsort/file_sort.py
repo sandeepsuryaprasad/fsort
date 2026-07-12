@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from time import sleep
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from time import sleep
 from typing import Optional
 
 
@@ -24,7 +24,7 @@ class File:
         return (file_name, last_modified, file_size)
 
     def _is_valid_dir(self, path: Path) -> bool:
-        """validates if the given path is valid dir or not"""
+        """Validates if the given path is valid dir or not"""
         if not path.exists():
             return False
         if not path.is_dir():

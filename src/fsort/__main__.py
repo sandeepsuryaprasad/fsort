@@ -1,9 +1,11 @@
-from fsort.file_sort import File
 from argparse import ArgumentParser
 from importlib.metadata import version
 
+from fsort.file_sort import File
+
 
 def console_entry():
+    """Takes CLI inputs"""
     sorting_choices = ("name", "size", "date")
     _parser = ArgumentParser()
     _parser.add_argument(
@@ -36,6 +38,7 @@ def console_entry():
 
 
 def run():
+    """Executes sort"""
     parser = console_entry()
     file = File()
     file.sort(path=parser.path, by_what=parser.key, pattern=parser.extension)
