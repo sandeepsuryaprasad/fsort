@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 from importlib.metadata import version
 
-from file_sort import FileSort
+from .file_sort import FileSort
 
 
 def console_entry():
