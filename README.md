@@ -2,30 +2,34 @@
 
 A lightweight command-line utility for sorting files in a directory by file name, file size, or last modified date.
 
-## Installation
+### Installation
 
 ```console
-pip install fsort-cli
+$ pip install fsort-cli
 ```
 
-## Usage
+```console
+$ fsort --version
+fsort 0.5.0
+```
+
+### Usage
 
 By default `fsort` sorts the files in the current working directory by file "name"
 ```console
 fsort
 ```
 
-You can specify the directory using `--path` cli argument
+You can specify the directory using `--path` CLI argument
 ```console
 fsort --path /path/to/directory
 ```
 
-NOTE: Windows users please enclose the directory path in quotes. For Mac/Linux users wrapping the directory path in quotes is not mandatory.
-```console
-fsort --path "C:\path\to\directory"
-```
+You can specify by what order the files need to be sorted using `--key` CLI argument
 
-You can specify by what order the files need to be sorted using `--key` cli argument
+NOTE: Windows users please enclose the directory path in quotes. For Mac/Linux users wrapping the directory path in quotes is not mandatory.
+
+Mac/Linux:
 ```console
 fsort --path /path/to/directory --key size
 
@@ -34,19 +38,31 @@ fsort --path /path/to/directory --key date
 fsort --path /path/to/directory --key name
 ```
 
-You can sort specific types of files using `--file-extension` cli argument.
+Windows:
+```console
+fsort --path "C:\path\to\directory" --key size
 
-Sort all jpg files by "name"
+fsort --path "C:\path\to\directory" --key date
+
+fsort --path "C:\path\to\directory" --key name
+```
+
+You can sort specific file types using `--file-extension` CLI argument.
+
+### Usage
+
+Sort only those files with `jpg` extension by "name"
+
 ```console
 fsort --path /path/to/directory --key name --file-extension jpg
 ```
 
-Sort all txt files by "size"
+Sort only those files with `txt` extension by "size"
 ```console
 fsort --path /path/to/directory --key size --file-extension txt
 ```
 
-Sort all png files by "last modified date"
+Sort only those files with `png` extension by "last modified date"
 ```console
 fsort --path /path/to/directory --key date --file-extension png
 ```
