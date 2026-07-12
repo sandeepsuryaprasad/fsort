@@ -1,0 +1,56 @@
+name: CI
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+    linting:
+      name: static-code-analysis
+      runs-on: ["ubuntu-latest"]
+      steps:
+        - name: install uv
+          uses: astral-sh/setup-uv@v7
+          with:
+            enable-cache: true
+            version: "0.9.13"
+        - name: install python
+          run: uv python install
+        - name: Checkout latest version from GIT
+          uses: actions/checkout@v1
+        - name: Install linting dependency
+          run: uv sync --only-group lint
+    run-tests:
+      name: Running tests ${{matrix.os}}
+      runs-on: ["ubuntu-latest"]
+      strategy:
+        fail-fast: false
+        matrix:
+              - os: ubuntu
+              - os: windows
+              - os: mac
+      steps:
+        - name: install uv
+          uses: astral-sh/setup-uv@v7
+          with:
+            enable-cache: true
+            version: "0.9.13"
+        - name: install python
+          run: uv python install 3.10
+        - name: Checkout latest version from GIT
+          uses: actions/checkout@v1
+        - name: install dependencies
+          run: uv sync
+        - name: Run tests
+          run: |
+            ...
+        - name: Upload results
+          uses: actions/upload-artifact@v4
+          if: always()
+          with:
+            name: reports_${{matrix.browser}}
+            path: |
+              ./assets_${{matrix.browser}}
+              ./report_${{matrix.browser}}.html
