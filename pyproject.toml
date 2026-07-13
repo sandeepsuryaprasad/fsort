@@ -1,7 +1,7 @@
 [project]
 name = "fsort-cli"
-version = "0.7.0"
-description = "Terminal program that sorts files by name/size/last-modified-date"
+version = "0.8.0"
+description = "Terminal program that displays file name, size and last-modified-date in sorted order"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = []
