@@ -8,12 +8,12 @@
 
 `fsort` does not actually modify/sort the files in the actual file system. It only reads the contents of the directory and displays the file name, size and last modified date in sorted order on terminal.
 
-![fsort Demo](images/fsort.png)
-![fsort Demo](images/fsort_key_size.png)
-![fsort Demo](images/fsort_key_date.png)
-![fsort Demo](images/fsort_key_file_extension_pdf.png)
-![fsort Demo](images/fsort_key_file_extension_py.png)
-![fsort Demo](images/fsort_key_file_extension_jpg.png)
+![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort.png)
+![Demo](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_size.png)
+![Demo](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_date.png)
+![Demo](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_file_extension_pdf.png)
+![Demo](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_file_extension_py.png)
+![Demo](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_file_extension_jpg.png)
 
 ### Installation
 
