@@ -1,6 +1,19 @@
 # fsort-cli
 
-A lightweight command-line utility for sorting files in a directory by file name, file size, or last modified date.
+`fsort` is a simple yet powerful terminal utility for viewing directory contents in an organized manner on your terminal window.
+
+`fsort` lets you visualise the files in sorted order by `name`, `size`, or `last modified date`.
+
+`fsort` provides a quick and convenient way to view files directly from the command line.
+
+`fsort` does not actually modify/sort the files in the actual file system. It only reads the contents of the directory and displays the file name, size and last modified date in sorted order on terminal.
+
+![fsort Demo](images/fsort.png)
+![fsort Demo](images/fsort_key_size.png)
+![fsort Demo](images/fsort_key_date.png)
+![fsort Demo](images/fsort_key_file_extension_pdf.png)
+![fsort Demo](images/fsort_key_file_extension_py.png)
+![fsort Demo](images/fsort_key_file_extension_jpg.png)
 
 ### Installation
 
