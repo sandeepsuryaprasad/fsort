@@ -1,10 +1,10 @@
 import subprocess
-import datetime
+from datetime import datetime
 
 
 def to_date_time(date_time_string):
     """Convert date_time_string to date_time object"""
-    return datetime.datetime.strptime(date_time_string, "%Y-%m-%d %H:%M:%S")
+    return datetime.strptime(date_time_string, "%Y-%m-%d %H:%M:%S")
 
 
 def test_sorting_default_order_all_files():
