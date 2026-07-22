@@ -47,4 +47,4 @@ jobs:
         - name: Install test dependency
           run: uv sync --only-group test
         - name: Run tests
-          run: pytest -vs
+          run: uv run pytest -vs
