@@ -23,7 +23,7 @@ jobs:
         - name: Install linting dependency
           run: uv sync --only-group lint
         - name: Run Ruff
-          run: uv run ruff check . --show-fixes
+          run: uv run ruff check . --fix --show-fixes
     run-tests:
       name: Running Unit-tests
       runs-on: ${{matrix.os}}
