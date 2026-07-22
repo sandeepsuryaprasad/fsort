@@ -45,6 +45,6 @@ jobs:
         - name: Checkout latest version from GIT
           uses: actions/checkout@v1
         - name: Install test dependency
-          run: uv sync --group-only test
+          run: uv sync --only-group test
         - name: Run tests
           run: pytest -vs
