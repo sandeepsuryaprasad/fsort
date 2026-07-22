@@ -18,7 +18,7 @@ jobs:
             version: "0.9.13"
 
         - name: install python
-          run: uv python install 3.12.13
+          run: uv python install 3.12
 
         - name: Checkout latest version from GIT
           uses: actions/checkout@v1
@@ -46,7 +46,7 @@ jobs:
             enable-cache: true
             version: "0.9.13"
 
-        - name: install python
+        - name: install python 3.12
           run: uv python install
 
         - name: Checkout latest version from GIT
