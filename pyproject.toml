@@ -34,8 +34,10 @@ fsort = "fsort.__main__:run"
 fix = true
 line-length = 119
 exclude = [
+    "tests",
     "sitepackages",
     ".git",
+    ".github",
     "__pycache__",
     ".venv",
     "build",
@@ -70,7 +72,6 @@ select = [
    "D106",    # Checks for undocumented public class definitions, for nested classes.
    "D201",    # Checks for docstrings on functions that are separated by one or more blank lines from the function definition.
    "D202",    # Checks for docstrings on functions that are separated by one or more blank lines from the function body.
-   "D203",    # Checks for docstrings on class definitions that are not preceded by a blank line.
    "D204",    # Checks for class methods that are not separated from the class's docstring by a blank line.
    "D300",    # Checks for docstrings that use '''triple single quotes''' instead of """triple double quotes""".
    "D404",    # Checks for docstrings that start with This.

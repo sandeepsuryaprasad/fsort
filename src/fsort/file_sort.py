@@ -14,7 +14,7 @@ class FileInfo:
 
 class FileSort:
     def _to_mega_bytes(self, bytes: float) -> float:
-        return round(bytes / 1024 ** 2, 2)
+        return round(bytes / 1024**2, 2)
 
     def _stats(self, path: Path) -> tuple:
         stats = path.stat()
@@ -50,12 +50,12 @@ class FileSort:
         for item in items:
             sleep(0.05)
             # Converting all fields to str
-            _last_modified: str = item.last_modified.strftime('%Y-%m-%d %H:%M:%S')
+            _last_modified: str = item.last_modified.strftime("%Y-%m-%d %H:%M:%S")
             _size: str = f"{item.size:.2f} MB"
             _file_name: str = item.name
             print(f"{_last_modified:<20} {_size:>14}\t{_file_name}")
 
-    def sort(self, path:str, by_what:str, pattern:str) -> None:
+    def sort(self, path: str, by_what: str, pattern: str) -> None:
         """Sorts the list of files"""
         files_to_sort = self._files_to_sort(path, pattern)
         if not files_to_sort:

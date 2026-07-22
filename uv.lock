@@ -28,8 +28,8 @@ wheels = [
 ]
 
 [[package]]
-name = "fsort"
-version = "0.0.3"
+name = "fsort-cli"
+version = "0.8.0"
 source = { editable = "." }
 
 [package.dev-dependencies]
