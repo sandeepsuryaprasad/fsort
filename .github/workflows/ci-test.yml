@@ -16,14 +16,19 @@ jobs:
           with:
             enable-cache: true
             version: "0.9.13"
+
         - name: install python
-          run: uv python install
+          run: uv python install 3.12.13
+
         - name: Checkout latest version from GIT
           uses: actions/checkout@v1
+
         - name: Install linting dependency
           run: uv sync --only-group lint
+
         - name: Run Ruff
           run: uv run ruff check . --fix --show-fixes
+
     run-tests:
       name: Running Unit-tests
       runs-on: ${{matrix.os}}
@@ -40,11 +45,15 @@ jobs:
           with:
             enable-cache: true
             version: "0.9.13"
+
         - name: install python
           run: uv python install
+
         - name: Checkout latest version from GIT
           uses: actions/checkout@v1
+
         - name: Install test dependency
           run: uv sync --only-group test
+
         - name: Run tests
           run: uv run pytest -vs
