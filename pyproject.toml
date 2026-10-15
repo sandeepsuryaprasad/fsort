@@ -3,28 +3,25 @@ name = "fsort-cli"
 version = "0.8.0"
 description = "Terminal program that displays file name, size and last-modified-date in sorted order"
 readme = "README.md"
-requires-python = ">=3.9"
-dependencies = []
+requires-python = ">=3.12"
 authors = [
     {name= "Sandeep Suryaprasad"}
 ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Topic :: Software Development :: Testing",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = []
 
 [tool.uv.build-backend]
 module-root = "src"
 module-name = "fsort"
 
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Framework :: Pytest",
-    "Intended Audience :: Developers",
-    "Topic :: Software Development :: Testing",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-]
-
 [dependency-groups]
-test = ["pytest==8.2.2"]
+test = ["pytest==8.3.5"]
 lint = ["ruff==0.11.12"]
 
 [project.scripts]
@@ -59,13 +56,11 @@ select = [
    "E501",    # Checks for lines that exceed the specified maximum character length.
    "RUF022",
    "TID252",
-   "N806",    # Checks for the use of non-lowercase variable names in functions.
    "F841",    # Checks for the presence of unused variables in function scopes.
    "N816",    # Checks for global variable names that follow the mixedCase convention.
    "B007",    # Checks for unused variables in loops (e.g., for and while statements).
-   "E401",    # Checks for multiple imports on one line.
-   "F401",    # Checks for unused imports.
    "D403",    # Checks for docstrings that do not start with a capital letter.
+   "D101",
    "D102",    # Checks for undocumented public method definitions.
    "D103",    # Checks for undocumented public function definitions.
    "D106",    # Checks for undocumented public class definitions, for nested classes.
