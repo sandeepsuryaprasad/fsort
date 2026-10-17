@@ -22,8 +22,8 @@ jobs:
         - name: Run Ruff
           run: uv run ruff check . --show-fixes
     run-tests:
-      name: Running Unit-tests
-      runs-on: ${{matrix.os}} Python(${{matrix.python-version}})
+      name: Running Unit-tests ${{matrix.os}} Python(${{matrix.python-version}})
+      runs-on: ${{matrix.os}}
       strategy:
         fail-fast: false
         matrix:
