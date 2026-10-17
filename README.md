@@ -1,10 +1,10 @@
 # fsort-cli
 
-[![Development Status](https://img.shields.io/pypi/status/fosrt-cli)](https://pypi.org/project/fsort-cli/)
+[![Development Status](https://img.shields.io/pypi/status/fsort-cli)](https://pypi.org/project/fsort-cli/)
 [![PyPI version](https://img.shields.io/pypi/v/fsort-cli?label=PyPI)](https://pypi.org/project/fsort-cli/)
 [![Python versions](https://img.shields.io/pypi/pyversions/fsort-cli?label=Python)](https://pypi.org/project/fsort-cli/)
 
-[![CI](https://github.com/sandeepsuryaprasad/fsort/actions/workflows/ci-test.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/fsort/actions/workflows/ci-test.yml)
+[![Unit tests](https://github.com/sandeepsuryaprasad/fsort/actions/workflows/ci-test.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/fsort/actions/workflows/ci-test.yml)
 
 
 `fsort` is a simple yet powerful terminal utility for viewing directory contents in an organized manner on your terminal window.
