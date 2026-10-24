@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+
 from fsort import __version__
 
 from .file_sort import FileSort
