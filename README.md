@@ -143,8 +143,6 @@ fsort --path "C:\path\to\directory" --key name
 
 You can sort specific file types using `--file-extension` CLI argument.
 
-### Usage
-
 Sort only those files with `jpg` extension by "name"
 
 ```console
