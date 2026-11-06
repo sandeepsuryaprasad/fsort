@@ -2,7 +2,6 @@
 
 [![Unit tests](https://github.com/sandeepsuryaprasad/fsort/actions/workflows/ci-test.yml/badge.svg?branch=main)](https://github.com/sandeepsuryaprasad/fsort/actions/workflows/ci-test.yml)
 [![Development Status](https://img.shields.io/pypi/status/fsort-cli)](https://pypi.org/project/fsort-cli/)
-[![Python versions](https://img.shields.io/pypi/pyversions/fsort-cli?label=Python)](https://pypi.org/project/fsort-cli/)
 [![Total Downloads](https://static.pepy.tech/badge/fsort-cli)](https://pepy.tech/project/fsort-cli)
 
 
