@@ -13,6 +13,61 @@
 
 `fsort` does not actually modify/sort the files in the actual file system. It only reads the contents of the directory and displays the file name, size and last modified date in sorted order on terminal.
 
+## Installation
+
+```console
+$ pip install fsort-cli
+```
+## Usage
+By default `fsort` sorts the files in the current working directory by file "name"
+```console
+fsort
+```
+
+You can specify the directory using `--path` CLI argument
+```console
+fsort --path /path/to/directory
+```
+
+You can specify by what order the files need to be sorted using `--key` CLI argument
+
+Mac/Linux:
+```console
+fsort --path /path/to/directory --key size
+
+fsort --path /path/to/directory --key date
+
+fsort --path /path/to/directory --key name
+```
+NOTE: Windows users please enclose the directory path in quotes. For Mac/Linux users wrapping the directory path in quotes is not mandatory.
+
+Windows:
+```console
+fsort --path "C:\path\to\directory" --key size
+
+fsort --path "C:\path\to\directory" --key date
+
+fsort --path "C:\path\to\directory" --key name
+```
+
+You can sort specific file types using `--file-extension` CLI argument.
+
+Sort only those files with `jpg` extension by "name"
+
+```console
+fsort --path /path/to/directory --key name --file-extension jpg
+```
+
+Sort only those files with `txt` extension by "size"
+```console
+fsort --path /path/to/directory --key size --file-extension txt
+```
+
+Sort only those files with `png` extension by "last modified date"
+```console
+fsort --path /path/to/directory --key date --file-extension png
+```
+
 ```console
 ~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files
 2026-07-13 19:15:08         0.00 MB	apple.csv
@@ -96,65 +151,8 @@
 2026-04-27 17:43:24         0.43 MB	pic.JPG
 2026-04-27 17:45:06         0.45 MB	bird.JPG
 ```
-
-### Installation
-
-```console
-$ pip install fsort-cli
-```
-
+## Installed version
 ```console
 $ fsort --version
 fsort 0.9.1
-```
-
-### Usage
-
-By default `fsort` sorts the files in the current working directory by file "name"
-```console
-fsort
-```
-
-You can specify the directory using `--path` CLI argument
-```console
-fsort --path /path/to/directory
-```
-
-You can specify by what order the files need to be sorted using `--key` CLI argument
-
-Mac/Linux:
-```console
-fsort --path /path/to/directory --key size
-
-fsort --path /path/to/directory --key date
-
-fsort --path /path/to/directory --key name
-```
-NOTE: Windows users please enclose the directory path in quotes. For Mac/Linux users wrapping the directory path in quotes is not mandatory.
-
-Windows:
-```console
-fsort --path "C:\path\to\directory" --key size
-
-fsort --path "C:\path\to\directory" --key date
-
-fsort --path "C:\path\to\directory" --key name
-```
-
-You can sort specific file types using `--file-extension` CLI argument.
-
-Sort only those files with `jpg` extension by "name"
-
-```console
-fsort --path /path/to/directory --key name --file-extension jpg
-```
-
-Sort only those files with `txt` extension by "size"
-```console
-fsort --path /path/to/directory --key size --file-extension txt
-```
-
-Sort only those files with `png` extension by "last modified date"
-```console
-fsort --path /path/to/directory --key date --file-extension png
 ```
