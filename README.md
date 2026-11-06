@@ -67,7 +67,7 @@ Sort only those files with `png` extension by "last modified date"
 ```console
 fsort --path /path/to/directory --key date --file-extension png
 ```
-
+### Demo Example
 ```console
 ~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files
 2026-07-13 19:15:08         0.00 MB	apple.csv
