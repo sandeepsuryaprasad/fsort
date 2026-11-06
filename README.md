@@ -13,12 +13,89 @@
 
 `fsort` does not actually modify/sort the files in the actual file system. It only reads the contents of the directory and displays the file name, size and last modified date in sorted order on terminal.
 
-![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort.png)
-![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_size.png)
-![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_date.png)
-![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_file_extension_pdf.png)
-![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_file_extension_py.png)
-![fsort](https://raw.githubusercontent.com/sandeepsuryaprasad/fsort/main/images/fsort_key_file_extension_jpg.png)
+```console
+~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files
+2026-07-13 19:15:08         0.00 MB	apple.csv
+2020-06-29 19:38:19         0.03 MB	apple.pdf
+2026-07-13 19:17:14         0.01 MB	bar.py
+2026-04-27 17:45:06         0.45 MB	bird.JPG
+2026-02-15 09:33:03         0.00 MB	config.ini
+2025-06-24 12:33:59         0.00 MB	config.txt
+2026-04-27 17:46:08         0.32 MB	elephant.JPG
+2026-05-27 17:03:43         0.00 MB	foo.py
+2026-07-08 20:01:13         0.44 MB	google.pdf
+2026-07-07 21:33:11         0.26 MB	ibm.pdf
+2026-07-07 21:33:08         0.06 MB	msft.pdf
+2026-04-27 17:43:24         0.43 MB	pic.JPG
+2025-12-23 22:12:19         0.00 MB	py.txt
+2025-03-14 22:17:03         0.00 MB	run.sh
+2026-07-13 19:14:35         0.00 MB	sample.csv
+2024-06-21 03:48:24         0.02 MB	sample.log
+2026-07-13 19:16:48         0.00 MB	yank.py
+2026-04-27 17:43:58         0.38 MB	zebra.JPG
+```
+```console
+~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files --key size
+2025-12-23 22:12:19         0.00 MB	py.txt
+2025-06-24 12:33:59         0.00 MB	config.txt
+2026-07-13 19:15:08         0.00 MB	apple.csv
+2026-07-13 19:14:35         0.00 MB	sample.csv
+2026-07-13 19:16:48         0.00 MB	yank.py
+2025-03-14 22:17:03         0.00 MB	run.sh
+2026-02-15 09:33:03         0.00 MB	config.ini
+2026-05-27 17:03:43         0.00 MB	foo.py
+2026-07-13 19:17:14         0.01 MB	bar.py
+2024-06-21 03:48:24         0.02 MB	sample.log
+2020-06-29 19:38:19         0.03 MB	apple.pdf
+2026-07-07 21:33:08         0.06 MB	msft.pdf
+2026-07-07 21:33:11         0.26 MB	ibm.pdf
+2026-04-27 17:46:08         0.32 MB	elephant.JPG
+2026-04-27 17:43:58         0.38 MB	zebra.JPG
+2026-04-27 17:43:24         0.43 MB	pic.JPG
+2026-07-08 20:01:13         0.44 MB	google.pdf
+2026-04-27 17:45:06         0.45 MB	bird.JPG
+```
+```console
+~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files --key date
+2020-06-29 19:38:19         0.03 MB	apple.pdf
+2024-06-21 03:48:24         0.02 MB	sample.log
+2025-03-14 22:17:03         0.00 MB	run.sh
+2025-06-24 12:33:59         0.00 MB	config.txt
+2025-12-23 22:12:19         0.00 MB	py.txt
+2026-02-15 09:33:03         0.00 MB	config.ini
+2026-04-27 17:43:24         0.43 MB	pic.JPG
+2026-04-27 17:43:58         0.38 MB	zebra.JPG
+2026-04-27 17:45:06         0.45 MB	bird.JPG
+2026-04-27 17:46:08         0.32 MB	elephant.JPG
+2026-05-27 17:03:43         0.00 MB	foo.py
+2026-07-07 21:33:08         0.06 MB	msft.pdf
+2026-07-07 21:33:11         0.26 MB	ibm.pdf
+2026-07-08 20:01:13         0.44 MB	google.pdf
+2026-07-13 19:14:35         0.00 MB	sample.csv
+2026-07-13 19:15:08         0.00 MB	apple.csv
+2026-07-13 19:16:48         0.00 MB	yank.py
+2026-07-13 19:17:14         0.01 MB	bar.py
+```
+```console
+~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files --key size --file-extension pdf
+2020-06-29 19:38:19         0.03 MB	apple.pdf
+2026-07-07 21:33:08         0.06 MB	msft.pdf
+2026-07-07 21:33:11         0.26 MB	ibm.pdf
+2026-07-08 20:01:13         0.44 MB	google.pdf
+```
+```console
+~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files --key size --file-extension py
+2026-07-13 19:16:48         0.00 MB	yank.py
+2026-05-27 17:03:43         0.00 MB	foo.py
+2026-07-13 19:17:14         0.01 MB	bar.py
+```
+```console
+~$ fsort --path /Users/sandeepsuryaprasad/Desktop/files --key size --file-extension JPG
+2026-04-27 17:46:08         0.32 MB	elephant.JPG
+2026-04-27 17:43:58         0.38 MB	zebra.JPG
+2026-04-27 17:43:24         0.43 MB	pic.JPG
+2026-04-27 17:45:06         0.45 MB	bird.JPG
+```
 
 ### Installation
 
