@@ -105,7 +105,7 @@ $ pip install fsort-cli
 
 ```console
 $ fsort --version
-fsort 0.8.0
+fsort 0.9.1
 ```
 
 ### Usage
