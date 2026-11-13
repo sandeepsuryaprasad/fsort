@@ -51,14 +51,25 @@ def test_sorting_by_last_modified_date():
     _files_list = [ to_date_time(_file)  for _file in files_list if _file.strip()]
     assert _files_list == sorted(_files_list)
 
-def test_sorting_invalid_dir_path():
-    result = subprocess.run(
-        "fsort --path ./invalid/path",
-        capture_output=True,
-        shell=True,
-        text=True
-    )
-    assert "does not exist" in result.stdout
+    def test_sorting_invalid_dir_path():
+        result = subprocess.run(
+            "fsort --path ./invalid/path",
+            capture_output=True,
+            shell=True,
+            text=True
+        )
+        assert "does not exist" in result.stderr
+        assert result.returncode == 2
+
+    def test_sorting_invalid_key():
+        result = subprocess.run(
+            "fsort --key age",
+            capture_output=True,
+            shell=True,
+            text=True
+        )
+    assert "invalid key" in result.stderr
+    assert result.returncode == 2
 
 def test_sorting_txt_files_by_name():
     result = subprocess.run(
