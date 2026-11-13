@@ -44,7 +44,7 @@ class Validate:
             return Result(error=f"{path!r} does not exist")
         if not path.is_dir():
             return Result(error=f"{path!r} does not exist")
-        return Result(value=path)
+        return Result()
 
     def validate_key(self, key: str):
         """Validate the sorting key against the supported options.
@@ -59,7 +59,7 @@ class Validate:
         sorting_choices = ("name", "size", "date")
         if key not in sorting_choices:
             return Result(error=f"{key!r} is invalid key")
-        return Result(value=key)
+        return Result()
 
 
 def _parser():
