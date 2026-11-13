@@ -58,7 +58,7 @@ def test_sorting_invalid_dir_path():
         shell=True,
         text=True
     )
-    assert "not a valid directory" in result.stdout
+    assert "does not exist" in result.stdout
 
 def test_sorting_txt_files_by_name():
     result = subprocess.run(
