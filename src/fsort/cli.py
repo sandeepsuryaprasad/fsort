@@ -41,9 +41,9 @@ class Validate:
         """
         path = Path(path)
         if not path.exists():
-            return Result(error=f"{path!r} not a valid directory")
+            return Result(error=f"{path!r} does not exist")
         if not path.is_dir():
-            return Result(error=f"{path!r} not a valid directory")
+            return Result(error=f"{path!r} does not exist")
         return Result(value=path)
 
     def validate_key(self, key: str):
