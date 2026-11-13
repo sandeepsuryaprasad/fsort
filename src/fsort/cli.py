@@ -18,12 +18,14 @@ class Result:
 
     The `is_ok` property indicates whether the operation succeeded.
     """
+
     def __init__(self, *, value=None, error=None):
         self.value = value
         self.error = error
 
     @property
     def is_ok(self):
+        """Indicate whether the operation completed successfully."""
         return self.error is None
 
 class Validate:
@@ -39,9 +41,9 @@ class Validate:
         """
         path = Path(path)
         if not path.exists():
-            return Result(error=f"{path!r} does not exist")
+            return Result(error=f"{path!r} not a valid directory")
         if not path.is_dir():
-            return Result(error=f"{path!r} is not a valid directory")
+            return Result(error=f"{path!r} not a valid directory")
         return Result(value=path)
 
     def validate_key(self, key: str):
