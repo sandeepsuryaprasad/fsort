@@ -27,7 +27,7 @@ class FileSort:
     def _files_to_sort(self, path: str, extension: str = "*") -> Optional[list[FileInfo]]:
         """Returns list of FileInfo objects"""
         path = Path(path)
-        files = []
+        files: list[FileInfo] = []
         for item in path.glob(f"*.{extension}"):
             if item.is_file():
                 name, last_modified, size = self._stats(item)
